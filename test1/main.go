@@ -5,7 +5,7 @@ func main() {
 	//c = make(chan int)
 	// or
 	c := make(chan int)
-	//c <- 1
+	//c <- 1 // will cause deadlock by unbuffered channel
 	go func() {
 		value := <-c
 		println(value)
